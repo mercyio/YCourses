@@ -1,0 +1,10 @@
+basically curring is creating multiple closures. the first function which returns a function, another function which again returns a closure function
+
+curring takes a function that receives more than one parameter and breaks it into a series of a unary(one parameter) function
+
+instead of creating a function to take all the arguments at ones, take the first function and return a new function, which takes the second one and returns a new function, which takes the third one, and so on until all argument has been fulfilled
+
+The number of nest functions a curried function has depends on the number of arguments it receives
+
+curring is named after Haskeli B. Curry
+it was gotten from a concept from lambda calculus
