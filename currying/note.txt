@@ -1,4 +1,4 @@
-basically curring is creating multiple closures. the first function which returns a function, another function which again returns a closure function
+basically curring is creating multiple closures. the first function which returns a function, another function which again returns a closure function and so on
 
 curring takes a function that receives more than one parameter and breaks it into a series of a unary(one parameter) function
 
