@@ -1,0 +1,41 @@
+What is Iterator pattern?
+What are generator functions?
+YIELD Keyword?
+
+
+What is Iterators and generators? 
+provides a mechanism for customizing the behavior of for....of loops
+
+Iterators:
+Specifically, an iterator is any object which implements the Iterator protocol by having a next() method that returns an object with two properties: value and done
+
+value
+The next value in the iteration sequence.
+
+done
+This is true if the last value in the sequence has already been consumed. If value is present alongside done, it is the iterator's return value.
+
+Once created, an iterator object can be iterated explicitly by repeatedly calling next(). 
+
+Iterating over an iterator is said to consume the iterator, because it is generally only possible to do once. After a terminating value has been yielded additional calls to next() should continue to return {done: true}.
+
+The most common iterator in JavaScript is the Array iterator, which returns each value in the associated array in sequence.
+
+All iterators are not arrays
+
+ iterators can express sequences of unlimited size, such as the range of integers between 0 and Infinity.
+
+Generator functions:
+They allow you to define an iterative algorithm by writing a single function whose execution is not continuous. 
+
+Generator functions are written using the function* syntax.
+
+When called, generator functions do not initially execute their code. Instead, they return a special type of iterator, called a Generator. 
+
+When a value is consumed by calling the generator's next method, the Generator function executes until it encounters the yield keyword.
+
+The function can be called as many times as desired, and returns a new Generator each time. Each Generator may only be iterated once.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators
+
+https://www.youtube.com/watch?v=xC6-kXz8D8I&list=PLinedj3B30sCZRV74kZrnOXU9zVdKY68w&index=7

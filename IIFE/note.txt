@@ -1,0 +1,16 @@
+IIFE stands for Immediately Invoked Function Expression.
+
+An IIFE is a javascript function that runs as soon as it is defined. the name IIFE is promoted by Ben Alman in his blog
+
+it is a design pattern which is also known as Self Executing Anonymous Function that contains two major parts.
+The first is the anonymous function with lexical scope enclosed within the Grouping Operator (). This prevents accessing variables within the IIFE idiom as well as polluting the global scope.
+The second part creates the immediately invoked function expression () through which the javascript engine will directly interpret the function.
+
+
+we would also use IIFE to create private and public variables ans methods.
+
+
+
+https://developer.mozilla.org/en-US/docs/Glossary/IIFE
+
+https://www.youtube.com/watch?v=UfaXa7kkJRo&list=PLinedj3B30sCZRV74kZrnOXU9zVdKY68w&index=6

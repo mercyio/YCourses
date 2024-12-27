@@ -1,0 +1,25 @@
+how to connect to bluetooth with js
+  go to https://developer.chrome.com/docs/capabilities/ bluetooth
+
+1.   navigate to about://flags
+
+2.  enable with experimental-web-platform-features
+
+3.  pair a device by prompting in ur console- 
+navigator.bluetooth.requestDevice(). 
+ps:  lets you exclude some devices from the browser picker. It can be used to exclude devices that match a broader filter but are unsupported.
+
+4.   instead of filters you can use the acceptAllDevices key to show all nearby Bluetooth devices.
+
+5.  navigator.bluetooth.requestDevice({ acceptAllDevices : true, optionalServices: ['battery_service']}).then(device => device.gatt.connect()).then(server => {
+  // Getting Battery Service…
+  return server.getPrimaryService('battery_service');
+}).then(service => {
+  // Getting Battery Level Characteristic…
+  return service.getCharacteristic('battery_level');
+}).then(characteristic => {
+  // Reading Battery Level…
+  return characteristic.readValue();
+}).then(value => {
+  console.log(`Battery percentage is ${value.getUint8(0)}`);
+})
