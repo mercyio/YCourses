@@ -1,0 +1,23 @@
+nodejs internally has a collection of dependencies that it used to execute our code.
+
+two most important dependencies are the V8 project and the lib uv project
+
+v8 project is a open source javascript engine created by google. The purpose of this project is to be able to execute javascript code outside of the browser
+
+lib uv project is a c++ Open source project that gives nodejs access to the operating systems and underlying file systems, it also gives access to networking and it also handles some aspects of concurrency
+
+with javascript code we write 100% javascript
+with nodejs we write 50% js and 50% c++
+with v8 we write 30% js and 70% c++
+with lib uv we write 100% c++
+
+nodejs gives us a nice interface to use to relate our javascript side of our application to the actual c++ thats running on our computer to actually interpret and execute out javascript code. basically, It provides a series of wrappers and a very unified and consistent API for us to use inside our projects eg the http module, fs, path, crypto
+
+we don't want to get access to direct c++ code but we want to use some js function and use it inside of our code. so by making use of node, we don't have to work with all the c++ that exist inside of lub uv or v8
+
+
+basically, the purpose of nodejs is to give us a nice consistent API for getting access to functionality that is implemented inside  v8 and lib uv
+
+
+task 1: pick a function in Node standard library
+function name: pbkdf2 function: this is a name of an algorithm that is used for hashing arbitrary data. it is a function inside of node crypto library. it is usually used to hash a password for storage inside of a database
