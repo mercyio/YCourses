@@ -21,3 +21,16 @@ basically, the purpose of nodejs is to give us a nice consistent API for getting
 
 task 1: pick a function in Node standard library
 function name: pbkdf2 function: this is a name of an algorithm that is used for hashing arbitrary data. it is a function inside of node crypto library. it is usually used to hash a password for storage inside of a database
+
+https://github.com/nodejs/node
+https://github.com/nodejs/node/blob/main/lib/internal/crypto/pbkdf2.js
+
+pbkdf2 is defined from something called process.binding. the process.binding is what connects the javascript world to the c++ world
+
+
+https://github.com/nodejs/node/blob/main/src/node_crypto.cc
+in the src folder where c++ is being initializes, the v8 project is used to translate the nodejs values that we place inside our different programs (like a boolean, a function or an object all translate into their c++ equivalent)
+
+lib uv is also used inside the file as well
+it is used for  a lot of concurrency and processing constructs on the c++ side
+
