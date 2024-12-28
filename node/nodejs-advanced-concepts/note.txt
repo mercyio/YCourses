@@ -34,3 +34,9 @@ in the src folder where c++ is being initializes, the v8 project is used to tran
 lib uv is also used inside the file as well
 it is used for  a lot of concurrency and processing constructs on the c++ side
 
+
+EVENT LOOP: 
+event loop is used by node to handle asynchronous code that we write inside our applications. event loop is like a control structure that decides what our one thread should be doing at any given point in time. every program we run has event loop
+
+THREADS: basically its like a little todo list that has some number of instructions that needs to be executed by the CPU. these thread is given to the cpu and then the cpu will attempt to run every instruction
+threads are units of instructions that are waiting to be executed by the CPU
