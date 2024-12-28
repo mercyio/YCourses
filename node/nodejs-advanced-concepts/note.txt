@@ -40,3 +40,18 @@ event loop is used by node to handle asynchronous code that we write inside our 
 
 THREADS: basically its like a little todo list that has some number of instructions that needs to be executed by the CPU. these thread is given to the cpu and then the cpu will attempt to run every instruction
 threads are units of instructions that are waiting to be executed by the CPU
+
+lib uv provides a thread pool (four threads) for very expensive function calls
+
+Question: can we use the thread pool for jc code or can only nodejs function use it.
+answer: we can write our custom JS code that uses the thread pool
+
+Question: what function in node std library uses the thread pool
+answer: all 'fs' module functions, some crypto stuff. depending on OS (windows or unix based system)
+
+Question: how does this thread pool stuff fit into the event loop?
+answer: task running in the thread pool are the 'pendingOperations' in the code example in loop.js
+
+
+
+it is actually our operating system that does the real HTTP request. lib uv is used to issue request and then it just wait on the operating system to emit a signal. so because lib uv is delegating the work to the operating system, the operating system decides weather to make a new thread or not. it does not generally work with the four(4) thread pool that is provided by lib uv
