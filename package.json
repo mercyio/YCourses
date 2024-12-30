@@ -1,0 +1,14 @@
+{
+  "name": "ycourses",
+  "version": "1.0.0",
+  "description": "This repository is dedicated to learning and practicing javascript concepts from private courses. It contains my notes, code samples, exercises, and any resources that I find valuable during my learning journey.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

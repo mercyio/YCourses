@@ -55,3 +55,21 @@ answer: task running in the thread pool are the 'pendingOperations' in the code 
 
 
 it is actually our operating system that does the real HTTP request. lib uv is used to issue request and then it just wait on the operating system to emit a signal. so because lib uv is delegating the work to the operating system, the operating system decides weather to make a new thread or not. it does not generally work with the four(4) thread pool that is provided by lib uv
+
+Question: what function in node std library  the OS async features
+answer: Almost everything around networking for all OS.
+
+Question: how does this os async stuff fit into the event loop
+answer: task using the 
+
+cluster mode is used to setup multiple copies of node that are all running our server inside them
+
+we cannot trick node into running with multiple threads but by starting up multiple copies we get multiple instances of the event loop 
+
+
+CLUSTER:
+the cluster manager is responsible for monitoring the health of individual instances of our applications.
+
+when using clustering, for example if we run index.js, node is still going to boot up our application by reading the contents of that file and launching a node instance but the first instance of node that is launched is what we call the cluster manager which is automatically created for us. This cluster manager is then responsible for starting up worker instances this instances are actually responsible for processing those incoming request. To create this instances, the cluster manager is going to require the cluster module from the node standard library
+
+isManager is always set to true
